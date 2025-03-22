@@ -1,7 +1,7 @@
 convertBtn = document.getElementById("convert");
 vidLink = document.getElementById("vidlink");
 
-let serverURL = 'http://127.0.0.1:5500/index.html';
+let serverURL = 'http://localhost:4000';
 
 convertBtn.onclick = () => {
 	downloadType = document.querySelector('input[name=downloadType]:checked');
