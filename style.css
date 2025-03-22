@@ -1,0 +1,109 @@
+body{
+    background-image: url("gtgt.png");
+    background-color: rgb(109, 61, 71);
+    background-blend-mode: multiply;
+    
+}
+
+.maincard{
+    width: 510px;    
+    height: 500px;
+    background-color: rgb(32, 32, 32);
+    display: block;
+    border-radius: 50px;
+    padding-bottom : 50px;
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.app-title{
+    height: 60px;
+    background-color: rgb(131, 94, 101);
+	border-radius: 50px 50px 0 0;
+} 
+
+ .app-title p{
+    text-align: center;
+    padding: 15px;
+    margin: 0 auto;
+    font-size: 1.2em;
+    color: white;
+}
+
+.yt-container{
+    width: 310px;
+    height: 230px;
+    background-color: rgb(32, 32, 32);
+    color: white;
+    padding: 15px;
+} 
+
+#vidlink{
+   color: rgba(255, 255, 255, 0.596);
+}
+
+.dops{
+    
+    padding: 10px;
+} 
+.mp44 {
+    
+    /* width: 300px; */
+    
+    justify-content: space-between;
+    align-items: center;
+    color: #ffffff;
+}
+.mp33{
+    color: #ffffff;
+    justify-content: space-between;
+    align-items: center;
+    list-style: none;
+    
+    
+    
+}
+/* .mp3{
+    border-radius: 30px;
+    height: 22px;
+    border: none;
+    font-weight:600;
+    font-size: medium;
+    padding: 30px 20px;
+    text-transform: uppercase;
+    transition: .3s;
+    padding: 10px;
+
+}  */
+ /* .mp3:hover {
+    
+        background-color: #d3c7c8;
+        cursor: pointer;
+} */
+
+/* .x:hover{
+    background-color: rgba(138, 137, 137, 0.288);
+}  */
+.btnt{
+    margin: 40px;
+    border-radius: 50px;
+    width: 200px;
+    height: 52px;
+    border: none;
+    font-weight:600;
+    font-size: medium;
+    padding: 0 20px;
+    background-color: #8a797a;
+    color: #d1b9b9;
+    text-transform: uppercase;
+    
+    
+}
+
+.btnt:hover{
+    background-color: #473b3b;
+    cursor: pointer;
+}
