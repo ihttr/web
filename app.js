@@ -1,7 +1,7 @@
 convertBtn = document.getElementById("convert");
 vidLink = document.getElementById("vidlink");
 
-let serverURL = 'http://localhost:4000';
+let serverURL = 'https://ihttr.github.io/web/';
 
 convertBtn.onclick = () => {
 	downloadType = document.querySelector('input[name=downloadType]:checked');
