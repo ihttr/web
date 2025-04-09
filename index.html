@@ -1,81 +1,142 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Smart File Converter</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-    <link rel="stylesheet" href="style.css">
-    <title>Youtube downloader</title>
-  </head>
-  <body>
-    <div class="container">
-      <center>
-        <div class="maincard">
-			<div class="app-title">
-				<p>Youtube Downloader</p>
-			</div>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(to right, #dfe9f3, #ffffff);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
 
-		<video width="auto" height="auto" poster="/img/mainForm/search-panel-img.png" playsinline loop muted controls class="search-result-video">
-			
-          	<div class="yt-container">
-			  <center>
-			  	<input class="form-control form-control-lg bg-dark" type="text" placeholder="Enter Youtube video link" id="vidlink" spellcheck="false">
-				<div class="dops mt-3">
-						<h5>Download Format</h5>
-						 <div class="mp44">
-						<input class="form-check-input" type="radio" name="downloadType" id="dmp4" value="mp4">
-						<label class="form-check-label" for="dmp4">MP4</label>
-<!-- 						<select name="qualityOption" id="dqual" class="form-control bg-dark text-light mt-3">
-							<option value="" selected>Download Quality</option>
-							<option value="highestvideo">Highest(Video)</option>
-							<option value="lowestvideo">Lowest(Video)</option>
-							
-						</select> -->
-					</div>
-					
-					<div class="mp33">
-						<input class="form-check-input" type="radio" name="downloadType" id="dmp3" value="mp3">
-						<label class="form-check-label" for="dmp3">MP3</label>
-						<div class = "mp3">
-<!-- 						<select name="qualityOption" id="dqual" class="form-control bg-dark text-light mt-3">
-							<option value="" selected>Download Quality</option>
-							<option value="highestaudio">Highest(Audio)</option>
-							<option value="xlowestaudio">Lowest(Audio)</option>
-						</select> -->
-						</div>
-					</div> <input type="button" value="Convert" class="btnt" id="convert">
-				 </div>
-				 <div class="xrow">
-					<select name="qualityOption" id="dqual" class="form-control bg-dark text-light mt-3">
-						<option value="" selected>Download Quality</option>
-						<option value="highestvideo">Highest(Video)</option>
-						<option value="lowestvideo">Lowest(Video)</option>
-						<option value="highestaudio">Highest(Audio)</option>
-						<option value="xlowestaudio">Lowest(Audio)</option>
-					</select>
-				</div>  -->
-				<div class="btn">
-				
-				
-		 <button class="btnt">Download</button>
-	  </div>
-			  </div>
-			</center>
-			 	
-			</div>
-        </div>
-      </center>
-	  
-    </div>
+    header {
+      background: #2d89ef;
+      color: #fff;
+      padding: 2rem 1rem;
+      text-align: center;
+      font-size: 2rem;
+    }
 
-    <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
-  	<script src="app.js"></script>
-  </body>
+    .converter-card {
+      background: #fff;
+      max-width: 500px;
+      margin: 3rem auto;
+      padding: 2rem;
+      border-radius: 16px;
+      box-shadow: 0 6px 24px rgba(0, 0, 0, 0.1);
+    }
+
+    .converter-card h2 {
+      text-align: center;
+      margin-bottom: 1.5rem;
+      color: #333;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 1.25rem;
+    }
+
+    label {
+      font-weight: bold;
+      color: #555;
+    }
+
+    select, input[type="file"], button {
+      padding: 0.75rem;
+      font-size: 1rem;
+      border: 1px solid #ccc;
+      border-radius: 10px;
+      outline: none;
+    }
+
+    button {
+      background-color: #2d89ef;
+      color: white;
+      font-weight: bold;
+      transition: background-color 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #2164b3;
+    }
+
+    footer {
+      text-align: center;
+      margin-top: auto;
+      padding: 1rem;
+      background: #f0f0f0;
+      color: #888;
+    }
+  </style>
+  <script>
+    function detectFileType(event) {
+      const fileInput = event.target;
+      const fileName = fileInput.files[0]?.name || "";
+      const extension = fileName.split('.').pop().toLowerCase();
+
+      const formatMap = {
+        'doc': 'Word (.doc/.docx)', 'docx': 'Word (.doc/.docx)',
+        'ppt': 'PowerPoint (.ppt/.pptx)', 'pptx': 'PowerPoint (.ppt/.pptx)',
+        'xls': 'Excel (.xls/.xlsx)', 'xlsx': 'Excel (.xls/.xlsx)',
+        'jpg': 'Image (.jpg/.png)', 'jpeg': 'Image (.jpg/.png)', 'png': 'Image (.jpg/.png)',
+        'pdf': 'PDF'
+      };
+
+      const detectedFormat = formatMap[extension];
+      const infoBox = document.getElementById("detected-format");
+      if (detectedFormat) {
+        infoBox.textContent = `Detected file type: ${detectedFormat}`;
+        infoBox.style.display = 'block';
+      } else {
+        infoBox.textContent = `File type not recognized`;
+        infoBox.style.display = 'block';
+      }
+    }
+  </script>
+</head>
+<body>
+  <header>
+   File Converter
+  </header>
+
+  <div class="converter-card">
+    <h2>Convert Files Easily</h2>
+    <form action="#" method="post" enctype="multipart/form-data">
+      <div>
+        <label for="file">Select a File</label>
+        <input type="file" id="file" name="file" required onchange="detectFileType(event)">
+        <p id="detected-format" style="display:none; margin-top: 0.5rem; color: #2d89ef;"></p>
+      </div>
+
+      <div>
+        <label for="to">Convert To Format</label>
+        <select id="to" name="to" required>
+          <option value="pdf">PDF</option>
+          <option value="word">Word (.doc/.docx)</option>
+          <option value="powerpoint">PowerPoint (.ppt/.pptx)</option>
+          <option value="excel">Excel (.xls/.xlsx)</option>
+          <option value="image">Image (.jpg/.png)</option>
+        </select>
+      </div>
+
+      <button type="submit">Convert Now</button>
+    </form>
+  </div>
+
+  <footer>
+    &copy; 2025 Smart File Converter. All rights reserved.
+  </footer>
+</body>
 </html>
